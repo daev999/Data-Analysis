@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# PyCharm
+.idea/
+
+# Environment variables
+.env
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Data files (usually too big / shouldn't be in git)
+*.csv
+*.xlsx
+*.json
+
+# Except sample/small reference data you actually want tracked
+!sample_data.csv
+
+# Jupyter notebook outputs (optional - see note below)
+# *.ipynb
+
+# Database
+*.sqlite3
+*.db
