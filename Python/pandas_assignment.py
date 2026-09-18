@@ -44,19 +44,35 @@ import pandas as pd
 
 # 1. Create a Pandas DataFrame with 3 columns and 5 rows filled with random integers. Introduce some NaN values. Fill the NaN values with the mean
 # of the respective columns.
-df = pd.DataFrame(np.random.randint(1, 100, size=(5, 3)))
-print("Original Dataframe")
+# df = pd.DataFrame(np.random.randint(1, 100, size=(5, 3)))
+# print("Original Dataframe")
+
+# Introduce some NaN values. 
+# df.loc[0, 0] = np.nan
+# df.loc[1, 1] = np.nan
+
+# Fill the NaN values with the mean
+# df[0] = df[0].fillna(df[0].mean())
+# df[1] = df[1].fillna(df[1].mean())
+
+# print("\nUpdated Dataframe") 
+# print(df)
+
+# 2. Create a Pandas DataFrame with 4 columns and 6 rows filled with random integers. Introduce some NaN values. Drop the rows with any NaN
+# values.
+# DataFrame created
+df = pd.DataFrame(np.random.randint(1, 100, size= (6, 4)))
 
 # Introduce some NaN values. 
 df.loc[0, 0] = np.nan
 df.loc[1, 1] = np.nan
 
-# Fill the NaN values with the mean
-df[0] = df[0].fillna(df[0].mean())
-df[1] = df[1].fillna(df[1].mean())
+print("Original Dataframe")
+print(df)
+
+# Drop the rows with any NaN values
+df.dropna(axis=0, how="any", inplace=True)
 
 print("\nUpdated Dataframe") 
 print(df)
 
-# 2. Create a Pandas DataFrame with 4 columns and 6 rows filled with random integers. Introduce some NaN values. Drop the rows with any NaN
-# values.
