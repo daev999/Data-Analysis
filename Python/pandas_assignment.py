@@ -61,18 +61,36 @@ import pandas as pd
 # 2. Create a Pandas DataFrame with 4 columns and 6 rows filled with random integers. Introduce some NaN values. Drop the rows with any NaN
 # values.
 # DataFrame created
-df = pd.DataFrame(np.random.randint(1, 100, size= (6, 4)))
+# df = pd.DataFrame(np.random.randint(1, 100, size=(6, 4)))
 
 # Introduce some NaN values. 
-df.loc[0, 0] = np.nan
-df.loc[1, 1] = np.nan
+# df.loc[0, 0] = np.nan
+# df.loc[1, 1] = np.nan
 
-print("Original Dataframe")
-print(df)
+# print("Original Dataframe")
+# print(df)
 
 # Drop the rows with any NaN values
-df.dropna(axis=0, how="any", inplace=True)
+# df.dropna(axis=0, how="any", inplace=True)
 
-print("\nUpdated Dataframe") 
-print(df)
+# print("\nUpdated Dataframe") 
+# print(df)
 
+# Assignment 4: Data Aggregation
+
+# 1. Create a Pandas DataFrame with 2 columns: 'Category' and 'Value'. Fill the 'Category' column with random categories ('A', 'B', 'C') and the
+# 'Value' column with random integers. Group the DataFrame by 'Category' and compute the sum and mean of 'Value' for each category.
+
+data = {
+    "category" : ["A", "B", "C"],
+    "value" : np.random.randint(1, 100, size=(3))
+}
+
+df = pd.DataFrame(data)
+grouped =df.groupby("category")["value"].agg(["sum", "mean"])
+
+print(grouped)
+
+
+# 2. Create a Pandas DataFrame with 3 columns: 'Product', 'Category', and 'Sales'. Fill the DataFrame with random data. Group the DataFrame by
+# 'Category' and compute the total sales for each category.
