@@ -81,16 +81,28 @@ import pandas as pd
 # 1. Create a Pandas DataFrame with 2 columns: 'Category' and 'Value'. Fill the 'Category' column with random categories ('A', 'B', 'C') and the
 # 'Value' column with random integers. Group the DataFrame by 'Category' and compute the sum and mean of 'Value' for each category.
 
-data = {
-    "category" : ["A", "B", "C"],
-    "value" : np.random.randint(1, 100, size=(3))
-}
+# data = {
+#     "category" : ["A", "B", "C"],
+#     "value" : np.random.randint(1, 100, size=(3))
+# }
 
-df = pd.DataFrame(data)
-grouped =df.groupby("category")["value"].agg(["sum", "mean"])
+# df = pd.DataFrame(data)
+# grouped =df.groupby("category")["value"].agg(["sum", "mean"])
 
-print(grouped)
+# print(grouped)
 
 
 # 2. Create a Pandas DataFrame with 3 columns: 'Product', 'Category', and 'Sales'. Fill the DataFrame with random data. Group the DataFrame by
 # 'Category' and compute the total sales for each category.
+
+data = {
+    "product": ["Laptop", "Phone", "Mouse", "Keyboard", "Monitor"],
+    "category": ["Electronics", "Electronics", "Accessories", "Accessories", "Electronics"],
+    "sales": np.random.randint(1, 500, size=5)
+}
+
+df = pd.DataFrame(data)
+
+grouped = df.groupby("category")["sales"].sum()
+
+print(grouped)
